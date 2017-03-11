@@ -1,0 +1,141 @@
+<resources>
+    <string name="app_name">背题吧少年</string>
+
+    <string name="tab_questionbank">题库</string>
+    <string name="tab_exercise">练习</string>
+    <string name="tab_found">发现</string>
+    <string name="tab_me">我</string>
+
+    <string name="action_search">查找</string>
+    <string name="menu_import">导入题库</string>
+    <string name="menu_addfriend">添加朋友</string>
+    <string name="menu_scan">扫一扫</string>
+    <string name="menu_feedback">意见反馈</string>
+    <string name="common_alert">警告</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="confirm">确定</string>
+    <string name="delete">删除</string>
+    <string name="cancel">取消</string>
+    <string name="success">操作成功!</string>
+    <string name="fail">操作失败!</string>
+
+    <string name="tip">提示</string>
+    <string name="tip_select_file">请选择文件:</string>
+    <string name="import_success">导入题库成功!</string>
+    <string name="import_fail">导入题库失败!</string>
+    <string name="del_questionbank_confirm">确认删除题库?</string>
+    <string name="delete_executing">正在删除</string>
+    <string name="delete_questionbank_success">删除题库成功!</string>
+    <string name="delete_questionbank_fail">删除题库失败!</string>
+    <string name="edit_questionbank_name">编辑题库名称</string>
+    <string name="edit_questionbank_name_empty">题库名称不能为空!</string>
+    <string name="edit_questionbank_name_success">修改题库名称:成功!</string>
+    <string name="edit_questionbank_name_fail">修改题库名称:失败!</string>
+
+    <!-- 题库信息-菜单 -->
+    <string name="menu_edit_qb_name">修改名称</string>
+    <string name="menu_delete_qb">删除题库</string>
+    <!-- 题库信息-内容 -->
+    <string name="tip_index_error">索引错误!</string>
+    <string name="tip_import_questionbank">请先导入题库!</string>
+    <string name="question_name">题库名称</string>
+    <string name="question_total">共%1d题</string>
+    <string name="import_time">添加时间</string>
+    <string name="type_single">单选题</string>
+    <string name="type_multiple">多选题</string>
+    <string name="type_blank">填空题</string>
+    <string name="type_judge">判断题</string>
+
+    <!-- 题目信息-菜单 -->
+    <string name="menu_edit_question">修改</string>
+    <string name="menu_delete_question">删除</string>
+    <string name="menu_collect_question">收藏</string>
+    <!-- 题目信息-内容 -->
+    <string name="question_type">%1$s第%2$d题</string>
+    <string name="question_option">%1$s. %2$s</string>
+    <string name="question_blank">答案: %1$s</string>
+    <string name="label_a">A. </string>
+    <string name="label_b">B. </string>
+    <string name="label_c">C. </string>
+    <string name="label_d">D. </string>
+    <string name="label_answer">答案: </string>
+    <string name="question_edit_submit">提交修改</string>
+    <string name="question_edit_cancel">取消修改</string>
+    <string name="question_edit_reset">重置</string>
+
+
+
+    <!-- 练习 -->
+    <string name="select_questionbank">选择题库</string>
+
+    <string name="select_range">出题范围</string>
+    <string name="range_all">练习全部</string>
+    <string name="range_wrong">只做错题</string>
+    <string name="range_favorite">只做收藏</string>
+    <string name="range_count">道题</string>
+
+    <string name="select_order">出题顺序</string>
+    <string name="order_normal">顺序练习</string>
+    <string name="order_reverse">倒序练习</string>
+    <string name="order_random">随机练习</string>
+
+    <string name="exercise_start">开始练习</string>
+    <string name="toast_select_questionbank">请选择题库!</string>
+    <string name="toast_import_questionbank">请先导入题库!</string>
+    <string name="toast_select_range">请选择出题范围!</string>
+    <string name="toast_select_order">请选择出题顺序!</string>
+    <string name="toast_first_question">已经是第一题!</string>
+    <string name="exercise_over">您已答完全部题目!</string>
+    <string name="exercise_analyse">答题统计</string>
+    <string name="exit">退出</string>
+
+    <string name="right">对</string>
+    <string name="wrong">错</string>
+    <string name="correct">正确</string>
+    <string name="incorrect">错误</string>
+    <string name="exercise_submit">提交答案</string>
+    <string name="answer_correct">回答正确!</string>
+    <string name="answer_incorrect">回答错误!正确答案是:%1$s</string>
+    <string name="correct_count">正确次数</string>
+    <string name="incorrect_count">错误次数</string>
+    <string name="accuracy">正确率</string>
+    <string name="exercise_report_title">练习报告</string>
+    <string name="exercise_report_range">练习范围</string>
+    <string name="exercise_report_order">练习顺序</string>
+    <string name="exercise_report_time">练习用时 </string>
+    <string name="exercise_type">题型</string>
+    <string name="exercise_count">总数</string>
+    <string name="exercise_exit">退出</string>
+    <string name="db_write_update_wong_fail">写入数据失败:未能更新题目答对或答错次数</string>
+    <string name="db_read_no_question">没有符合条件的题目!</string>
+
+    <!-- 发现 -->
+    <string name="fount_export_destination_file">/Download/题库模板.xls</string>
+    <string name="fount_export_source_file">questionbank_demo.xls</string>
+    <string name="questionbank_demo">导出题库模板</string>
+    <string name="found_insert_sdcard">请插入存储卡!</string>
+    <string name="found_overwrite">Download目录下已存在模板文件!是否覆盖原文件?</string>
+    <string name="found_export_fail">导出失败!</string>
+    <string name="found_export_success">导出成功!</string>
+    <string name="found_export_cancel">已取消操作!</string>
+
+    <!-- 引导页 -->
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Lonely</string>
+    <string name="slide_2_title">Meet</string>
+    <string name="slide_3_title">Fall in love at first sight</string>
+    <string name="slide_4_title">Both fall in love</string>
+    <string name="slide_5_title">Together forever</string>
+
+    <string name="play_again">play again</string>
+    <!-- 设置页 -->
+    <string name="setting1">个性签名</string>
+    <string name="setting2">我的资料</string>
+    <string name="setting3">消息通知</string>
+    <string name="setting4">辅助功能</string>
+</resources>

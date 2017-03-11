@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/padding_large"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <!-- 内部暂为空.在QuestionbankInfoActivity中动态填充TextView -->
+            <TextView
+                android:id="@+id/tv_questionbank_type0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/type_single"
+                android:textColor="@color/textColorSecondary" />
+
+            <TextView
+                android:id="@+id/tv_questionbank_type1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/type_multiple"
+                android:textColor="@color/textColorSecondary" />
+
+            <TextView
+                android:id="@+id/tv_questionbank_type2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/type_blank"
+                android:textColor="@color/textColorSecondary" />
+
+            <TextView
+                android:id="@+id/tv_questionbank_type3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/type_judge"
+                android:textColor="@color/textColorSecondary" />
+
+        </LinearLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager_qb_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:id="@+id/layout_qb_info"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dots_height"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <!-- 内部暂为空.在QuestionbankInfoActivity中动态填充ListView -->
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

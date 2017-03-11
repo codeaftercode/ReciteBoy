@@ -1,0 +1,71 @@
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:anna="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/main_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+
+        </android.support.v4.view.ViewPager>
+        <com.daimajia.numberprogressbar.NumberProgressBar
+            android:id="@+id/npb_main_import"
+            android:visibility="gone"
+            anna:progress_max="100"
+            style="@style/NumberProgressBar_Default"
+            android:background="@color/bg_Primary"
+            android:layout_width="wrap_content"
+            android:padding="20dp"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/tab_height"
+            android:background="@drawable/tab_bg"
+            android:orientation="horizontal">
+
+            <com.codeaftercode.reciteboy.main.ChangeColorIconWithText
+                android:id="@+id/main_indicator_one"
+                style="@style/Tab"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                anna:icon="@mipmap/ic_menu_questionbank"
+                anna:text="@string/tab_questionbank" />
+
+            <com.codeaftercode.reciteboy.main.ChangeColorIconWithText
+                android:id="@+id/main_indicator_two"
+                style="@style/Tab"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                anna:icon="@mipmap/ic_menu_exercise"
+                anna:text="@string/tab_exercise" />
+
+            <com.codeaftercode.reciteboy.main.ChangeColorIconWithText
+                android:id="@+id/main_indicator_three"
+                style="@style/Tab"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                anna:icon="@mipmap/ic_menu_found"
+                anna:text="@string/tab_found" />
+
+            <com.codeaftercode.reciteboy.main.ChangeColorIconWithText
+                android:id="@+id/main_indicator_four"
+                style="@style/Tab"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                anna:icon="@mipmap/ic_menu_me"
+                anna:text="@string/tab_me" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

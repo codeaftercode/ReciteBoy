@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="android.graphics.Color" />
+
+        <import type="java.text.NumberFormat" />
+
+        <variable
+            name="question"
+            type="com.codeaftercode.reciteboy.bean.Question" />
+
+        <variable
+            name="index"
+            type="int" />
+
+        <variable
+            name="editable"
+            type="boolean" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:text="@{question.TYPES[question.type] + Integer.toString(index)}"
+            android:textColor="@color/textColorSecondary" />
+
+        <EditText
+            android:id="@+id/et_question_title"
+            style="@style/OptionItem.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="@{editable}"
+            android:inputType="textMultiLine"
+            android:text="@{question.title}"
+            android:textColor="@color/textColorPrimary" />
+
+        <LinearLayout
+            style="@style/OptionItem.LinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{question.type &lt; 2 ? View.VISIBLE : View.GONE}">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_a"
+                android:textColor="@{question.answer.contains(`A`) ? @color/highlight : @color/textColorPrimary}"
+                android:textSize="@dimen/question_info_option" />
+
+            <EditText
+                android:id="@+id/et_question_optionA"
+                style="@style/OptionItem.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="@{editable}"
+                android:text="@{question.getOptionAtIndex(0)}"
+                android:textColor="@{question.answer.contains(`A`) ? @color/highlight : @color/textColorPrimary}" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/OptionItem.LinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{question.type &lt; 2 ? View.VISIBLE : View.GONE}">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_b"
+                android:textColor="@{question.answer.contains(`B`) ? @color/highlight : @color/textColorPrimary}"
+                android:textSize="@dimen/question_info_option" />
+
+            <EditText
+                android:id="@+id/et_question_optionB"
+                style="@style/OptionItem.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="@{editable}"
+                android:text="@{question.getOptionAtIndex(1)}"
+                android:textColor="@{question.answer.contains(`B`) ? @color/highlight : @color/textColorPrimary}" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            style="@style/OptionItem.LinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{question.type &lt; 2 ? View.VISIBLE : View.GONE}">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_c"
+                android:textColor="@{question.answer.contains(`C`) ? @color/highlight : @color/textColorPrimary}"
+                android:textSize="@dimen/question_info_option" />
+
+            <EditText
+                android:id="@+id/et_question_optionC"
+                style="@style/OptionItem.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="@{editable}"
+                android:text="@{question.getOptionAtIndex(2)}"
+                android:textColor="@{question.answer.contains(`C`) ? @color/highlight : @color/textColorPrimary}" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/OptionItem.LinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{question.type &lt; 2 ? View.VISIBLE : View.GONE}">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_d"
+                android:textColor="@{question.answer.contains(`D`) ? @color/highlight : @color/textColorPrimary}"
+                android:textSize="@dimen/question_info_option" />
+
+            <EditText
+                android:id="@+id/et_question_optionD"
+                style="@style/OptionItem.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="@{editable}"
+                android:text="@{question.getOptionAtIndex(3)}"
+                android:textColor="@{question.answer.contains(`D`) ? @color/highlight : @color/textColorPrimary}" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/OptionItem.LinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_answer"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/question_info_option" />
+
+            <EditText
+                android:id="@+id/et_question_answer"
+                style="@style/OptionItem.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="@{editable}"
+                android:text="@{question.type != 3 ? question.answer : (question.answer.equals(`0`) ? `错` : `对`)}"
+                android:textColor="@color/textColorPrimary" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_large"
+            android:background="@color/bg_Primary"
+            android:padding="@dimen/padding_small"
+            android:text="@{@string/correct_count + Integer.toString(question.correct)}"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/question_info_option"
+            android:visibility="visible" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_Primary"
+            android:padding="@dimen/padding_small"
+            android:text="@{@string/incorrect_count + Integer.toString(question.wrong)}"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/question_info_option"
+            android:visibility="visible" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_Primary"
+            android:padding="@dimen/padding_small"
+            android:text="@{@string/accuracy + (question.correct + question.wrong &lt; 1 ? `` : (NumberFormat.getPercentInstance().format((float)question.correct / (question.correct + question.wrong))))}"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/question_info_option"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/btn_question_edit_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="@dimen/padding_large"
+            android:background="@color/highlight"
+            android:gravity="center"
+            android:text="@string/question_edit_submit"
+            android:visibility="@{editable ? View.VISIBLE : View.GONE}" />
+
+
+        <Button
+            android:id="@+id/btn_question_edit_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/padding_small"
+            android:layout_marginRight="@dimen/padding_small"
+            android:layout_marginTop="@dimen/padding_small"
+            android:background="@color/highlight"
+            android:gravity="center"
+            android:text="@string/question_edit_cancel"
+            android:visibility="@{editable ? View.VISIBLE : View.GONE}" />
+
+        <Button
+            android:id="@+id/btn_question_edit_reset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/padding_small"
+            android:layout_marginRight="@dimen/padding_small"
+            android:layout_marginTop="@dimen/padding_small"
+            android:background="@color/highlight"
+            android:gravity="center"
+            android:text="@string/question_edit_reset"
+            android:visibility="@{editable ? View.VISIBLE : View.GONE}" />
+
+    </LinearLayout>
+</layout>

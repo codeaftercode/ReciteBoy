@@ -1,0 +1,39 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_search"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        android:icon="@mipmap/actionbar_search_icon"
+        android:title="@string/action_search"
+        app:showAsAction="ifRoom|collapseActionView" />
+
+    <item
+        android:id="@+id/action_import"
+        android:icon="@mipmap/menu_import_icon"
+        android:title="@string/menu_import" />
+    <item
+        android:id="@+id/action_add_friend"
+        android:icon="@mipmap/menu_addfriend_icon"
+        android:title="@string/menu_addfriend" />
+    <item
+        android:id="@+id/action_scan"
+        android:icon="@mipmap/menu_scan_icon"
+        android:title="@string/menu_scan" />
+    <item
+        android:id="@+id/action_feedback"
+        android:icon="@mipmap/menu_feedback_icon"
+        android:title="@string/menu_feedback" />
+
+</menu>
+
+    <!--
+    <item>标签中又有一些属性
+    其中id是该Action按钮的唯一标识符
+    icon用于指定该按钮的图标
+    title用于指定该按钮可能显示的文字（在图标能显示的情况下，通常不会显示文字）
+    showAsAction则指定了该按钮显示的位置，主要有以下几种值可选：
+        always表示永远显示在ActionBar中，如果屏幕空间不够则无法显示
+        ifRoom表示屏幕空间够的情况下显示在ActionBar中，不够的话就显示在overflow中
+        never则表示永远显示在overflow中
+    -->

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="count"
+            type="int" />
+
+        <variable
+            name="wrong"
+            type="int" />
+
+        <variable
+            name="collect"
+            type="int" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            style="@style/SettingItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_large"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingEnd="@dimen/padding_large"
+                android:paddingRight="@dimen/padding_large"
+                android:paddingStart="@dimen/padding_large"
+                android:text="@string/select_questionbank" />
+
+            <Spinner
+                android:id="@+id/spinner_select_questionbank"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/padding_large"
+                android:layout_marginRight="@dimen/padding_large"
+                android:layout_weight="1"
+                android:overlapAnchor="false"
+                android:spinnerMode="dropdown"
+                tools:targetApi="lollipop" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/SettingItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_large"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/padding_large">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingEnd="@dimen/padding_large"
+                android:paddingRight="@dimen/padding_large"
+                android:paddingStart="@dimen/padding_large"
+                android:text="@string/select_range" />
+
+            <RadioGroup
+                android:id="@+id/rg_select_range"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/padding_large"
+                android:layout_marginRight="@dimen/padding_large">
+
+                <RadioButton
+                    android:id="@+id/rb_range_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="@{@string/range_all + `(` + String.valueOf(count) + @string/range_count + `)`}" />
+
+                <RadioButton
+                    android:id="@+id/rb_range_wrong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:enabled="@{wrong &lt; 1 ? false : true}"
+                    android:text="@{@string/range_wrong + `(` + String.valueOf(wrong) + @string/range_count + `)`}" />
+
+                <RadioButton
+                    android:id="@+id/rb_range_favorite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:enabled="@{collect &lt; 1 ? false : true}"
+                    android:text="@{@string/range_favorite + `(` + String.valueOf(collect) + @string/range_count + `)`}" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/SettingItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_large"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/padding_large">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingEnd="@dimen/padding_large"
+                android:paddingRight="@dimen/padding_large"
+                android:paddingStart="@dimen/padding_large"
+                android:text="@string/select_order" />
+
+            <RadioGroup
+                android:id="@+id/rg_select_order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/padding_large"
+                android:layout_marginRight="@dimen/padding_large">
+
+                <RadioButton
+                    android:id="@+id/rb_order_normal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="@string/order_normal" />
+
+                <RadioButton
+                    android:id="@+id/rb_order_reverse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/order_reverse" />
+
+                <RadioButton
+                    android:id="@+id/rb_order_random"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/order_random" />
+            </RadioGroup>
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/exercise_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="@dimen/padding_large"
+            android:background="@color/highlight"
+            android:gravity="center"
+            android:text="@string/exercise_start" />
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <import type="com.codeaftercode.reciteboy.bean.QuestionBank"/>
+        <variable
+            name="questionbank"
+            type="QuestionBank" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/content"
+        style="@style/SettingItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_questionbank_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@{questionbank.title}" />
+
+        <TextView
+            android:id="@+id/tv_questionbank_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{`共` + String.valueOf(questionbank.count) + `题`}" />
+
+        <TextView
+            android:id="@+id/tv_questionbank_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{questionbank.addDate}" />
+
+    </LinearLayout>
+</layout>

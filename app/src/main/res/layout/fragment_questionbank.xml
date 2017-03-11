@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="questionBank"
+            type="com.codeaftercode.reciteboy.bean.QuestionBank" />
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView_questionbankFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/padding_large" />
+
+        <TextView
+            android:id="@+id/tv_questionbankFragment_emptyView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/tip_import_questionbank"
+            android:visibility="gone" />
+    </LinearLayout>
+</layout>

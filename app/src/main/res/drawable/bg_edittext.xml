@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 不可编辑时 -->
+    <item android:state_enabled="false" android:drawable="@color/textColorSecondary" />
+    <!-- 可编辑,未获得焦点时 -->
+    <item android:state_enabled="true" android:state_focused="false">
+        <shape>
+            <solid android:color="@color/textColorSecondary" />
+            <corners android:radius="3dip" />
+            <stroke android:width="1dip" android:color="#BDC7D8" />
+        </shape>
+    </item>
+    <!-- 可编辑,获得焦点时 -->
+    <item android:state_enabled="true" android:state_focused="true">
+        <shape>
+            <solid android:color="@color/textColorSecondary" />
+            <corners android:radius="3dip" />
+            <stroke android:width="1dip" android:color="#728ea3" />
+        </shape>
+    </item>
+</selector>

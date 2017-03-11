@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="exerciseTime"
+            type="String" />
+        <variable
+            name="exerciseRange"
+            type="int" />
+        <variable
+            name="exerciseOrder"
+            type="int" />
+
+        <variable
+            name="correctCount"
+            type="int[]" />
+
+        <variable
+            name="incorrectCount"
+            type="int[]" />
+
+        <variable
+            name="count"
+            type="int[]" />
+
+        <variable
+            name="accuracy"
+            type="String[]" />
+
+        <variable
+            name="dao"
+            type="com.codeaftercode.reciteboy.db.Dao" />
+
+        <variable
+            name="question"
+            type="com.codeaftercode.reciteboy.bean.Question" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/OptionItem.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/exercise_report_title" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/textColorSecondary"
+            android:divider="@drawable/table_v_divider"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:showDividers="beginning|middle|end"
+            android:stretchColumns="*">
+
+            <TableRow style="@style/TableLayout.TableRow">
+
+                <TextView
+                    style="@style/TableLayout.TextView"
+                    android:text="@string/exercise_type" />
+
+                <TextView
+                    style="@style/TableLayout.TextView"
+                    android:text="@string/correct" />
+
+                <TextView
+                    style="@style/TableLayout.TextView"
+                    android:text="@string/incorrect" />
+
+                <TextView
+                    style="@style/TableLayout.TextView"
+                    android:text="@string/exercise_count" />
+
+                <TextView
+                    style="@style/TableLayout.TextView"
+                    android:text="@string/accuracy" />
+
+            </TableRow>
+
+            <TableRow style="@style/TableLayout.TableRow">
+
+                <TextView
+                    style="@style/TableLayout.TextView"
+                    android:text="@{question.TYPES[0]}" />
+
+                <TextView
+                    style="@style/TableLayout.TextView"
+                    android:text="@{String.valueOf(correctCount[0])}" />
+
+                <TextView
+                    style="@style/TableLayout.TextView"
+                    android:text="@{String.valueOf(incorrectCount[0])}" />
+
+                <TextView
+                    style="@style/TableLayout.TextView"
+                    android:text="@{String.valueOf(count[0])}" />
+
+                <TextView
+                    style="@style/TableLayout.TextView"
+                    android:text="@{accuracy[0]}" />
+
+            </TableRow>
+
+            <TableRow style="@style/TableLayout.TableRow">
+
+                <TextView
+                    style="@style/TableLayout.TextView"
+                    android:text="@{question.TYPES[1]}" />
+
+                <TextView
+                    style="@style/TableLayout.TextView"
+                    android:text="@{String.valueOf(correctCount[1])}" />
+
+                <TextView
+                    style="@style/TableLayout.TextView"
+                    android:text="@{String.valueOf(incorrectCount[1])}" />
+
+                <TextView
+                    style="@style/TableLayout.TextView"
+                    android:text="@{String.valueOf(count[1])}" />
+
+                <TextView
+                    style="@style/TableLayout.TextView"
+                    android:text="@{accuracy[1]}" />
+
+            </TableRow>
+
+            <TableRow style="@style/TableLayout.TableRow">
+
+                <TextView
+                    style="@style/TableLayout.TextView"
+                    android:text="@{question.TYPES[2]}" />
+
+                <TextView
+                    style="@style/TableLayout.TextView"
+                    android:text="@{String.valueOf(correctCount[2])}" />
+
+                <TextView
+                    style="@style/TableLayout.TextView"
+                    android:text="@{String.valueOf(incorrectCount[2])}" />
+
+                <TextView
+                    style="@style/TableLayout.TextView"
+                    android:text="@{String.valueOf(count[2])}" />
+
+                <TextView
+                    style="@style/TableLayout.TextView"
+                    android:text="@{accuracy[2]}" />
+
+            </TableRow>
+
+            <TableRow style="@style/TableLayout.TableRow">
+
+                <TextView
+                    style="@style/TableLayout.TextView"
+                    android:text="@{question.TYPES[3]}" />
+
+                <TextView
+                    style="@style/TableLayout.TextView"
+                    android:text="@{String.valueOf(correctCount[3])}" />
+
+                <TextView
+                    style="@style/TableLayout.TextView"
+                    android:text="@{String.valueOf(incorrectCount[3])}" />
+
+                <TextView
+                    style="@style/TableLayout.TextView"
+                    android:text="@{String.valueOf(count[3])}" />
+
+                <TextView
+                    style="@style/TableLayout.TextView"
+                    android:text="@{accuracy[3]}" />
+
+            </TableRow>
+        </TableLayout>
+        <TextView
+            style="@style/OptionItem.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{@string/exercise_report_range + `:` + ((exerciseRange == dao.RANGE_ALL) ? @string/range_all : (exerciseRange == dao.RANGE_WRONG ? @string/range_wrong : @string/range_favorite))}" />
+        <TextView
+            style="@style/OptionItem.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{@string/exercise_report_order + `:` + (exerciseOrder == dao.ORDER_NORMAL ? @string/order_normal : (exerciseOrder == dao.ORDER_REVERSE ? @string/order_reverse : @string/order_random))}" />
+        <TextView
+            style="@style/OptionItem.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{@string/exercise_report_time + exerciseTime}" />
+
+        <Button
+            android:id="@+id/exercise_exit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/padding_large"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="@dimen/padding_large"
+            android:background="@color/highlight"
+            android:gravity="center"
+            android:text="@string/exercise_exit" />
+
+    </LinearLayout>
+</layout>

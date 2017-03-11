@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="index"
+            type="int" />
+
+        <variable
+            name="question"
+            type="com.codeaftercode.reciteboy.bean.Question" />
+
+        <variable
+            name="count"
+            type="int[]" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{question.TYPES[question.type]}" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(index)}" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`/` + String.valueOf(count[question.type])}" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{question.title}" />
+
+        <LinearLayout
+            android:id="@+id/layout_question_options"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- 动态填充选项 -->
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/exercise_answer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{question.answer}"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/exercise_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/padding_large"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="@dimen/padding_large"
+            android:background="@color/highlight"
+            android:gravity="center"
+            android:text="@string/exercise_submit" />
+    </LinearLayout>
+</layout>

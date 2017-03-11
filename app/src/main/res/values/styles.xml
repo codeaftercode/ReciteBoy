@@ -1,0 +1,95 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+        <!--窗口背景颜色-->
+        <item name="android:windowBackground">@color/bg_common</item>
+        <!--ActionBar的标题文字颜色 -->
+        <item name="android:textColorPrimary">@color/textColorSecondary</item>
+
+        <!--ActionBar的OverflowMenu样式-->
+        <!--设置overflow不遮挡actionbar-->
+        <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
+        <!--设置overflow中的action背景颜色-->
+        <item name="android:itemBackground">@color/colorPrimary</item>
+        <!--设置overflow中的action文字颜色-->
+        <item name="android:itemTextAppearance">@style/ItemTextAppearance</item>
+
+    </style>
+
+    <style name="OverflowMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <!--兼容Api 21之前的版本 -->
+        <item name="overlapAnchor">false</item>
+        <!-- Api 21-->
+        <!--<item name="android:overlapAnchor">false</item>-->
+    </style>
+    <style name="ItemTextAppearance">
+        <item name="android:textColor">@color/textColorSecondary</item>
+    </style>
+
+    <!--主页-下方导航按钮-->
+    <style name="Tab">
+        <item name="android:textSize">@dimen/textSize_micro</item>
+        <item name="android:color">@color/highlight</item>
+        <item name="android:padding">@dimen/padding_small</item>
+    </style>
+    <!--题库-题目信息-->
+    <style name="OptionItem">
+        <item name="android:background">@color/textColorSecondary</item>
+    </style>
+    <style name="OptionItem.LinearLayout">
+        <item name="android:padding">@dimen/padding_small</item>
+        <item name="android:layout_marginTop">1dp</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="OptionItem.EditText">
+        <item name="android:textSize">@dimen/question_info_option</item>
+        <item name="android:background">@drawable/bg_edittext</item>
+        <item name="android:inputType">textMultiLine</item>
+    </style>
+
+    <style name="TableLayout">
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="TableLayout.TableRow">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:divider">@drawable/table_h_divider</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:showDividers">beginning|middle|end</item>
+    </style>
+    <style name="TableLayout.TextView">
+        <item name="android:textSize">@dimen/exercise_report</item>
+    </style>
+
+
+    <!--设置页-->
+    <style name="SettingItem">
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:padding">@dimen/padding_small</item>
+        <item name="android:background">@drawable/setting_item</item>
+        <!-- 右侧箭头
+        <item name="android:drawableRight">@mipmap/setting_arrow</item>
+        <item name="android:drawableEnd">@mipmap/setting_arrow</item>
+        -->
+    </style>
+    <!-- view分割线样式 -->
+    <style name="bg_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+</resources>
