@@ -53,7 +53,6 @@ public class Question implements Serializable {
         this.title = title;
     }
 
-
     /*
     * 正确答案
     * 单项选择题为ABCD中的一个
