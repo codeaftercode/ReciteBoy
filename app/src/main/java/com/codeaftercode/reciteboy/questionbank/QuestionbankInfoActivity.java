@@ -63,15 +63,31 @@ public class QuestionbankInfoActivity extends BaseActivity {
     private QuestionBank mQuestionbank;
     //显示题型
     private TextView[] tvs = new TextView[Question.TYPES.length];
+    ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
+
+        @Override
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+        }
+
+        @Override
+        public void onPageSelected(int position) {
+            //改变上方4个TextView的外观
+            setTextViewBackgroundColor(position);
+        }
+
+        @Override
+        public void onPageScrollStateChanged(int state) {
+
+        }
+    };
     //用于显示题目信息的ListView
     private ListView[] lvs = new ListView[tvs.length];
     //数据
     private ArrayList<?>[] questions = new ArrayList<?>[tvs.length];
     //适配器
     private ArrayAdapter[] adapters = new ArrayAdapter[tvs.length];
-
     private ActionBar mActionBar;
-
     private Handler mHandler = new MyHandler(this);
 
     @Override
@@ -209,8 +225,6 @@ public class QuestionbankInfoActivity extends BaseActivity {
         }
     }
 
-
-
     /**
      * 显示菜单
      *
@@ -222,7 +236,6 @@ public class QuestionbankInfoActivity extends BaseActivity {
         getMenuInflater().inflate(R.menu.questionbank_info, menu);
         return true;
     }
-
 
     /**
      * action监听
@@ -340,53 +353,6 @@ public class QuestionbankInfoActivity extends BaseActivity {
 
     }
 
-    ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
-
-        @Override
-        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-        }
-
-        @Override
-        public void onPageSelected(int position) {
-            //改变上方4个TextView的外观
-            setTextViewBackgroundColor(position);
-        }
-
-        @Override
-        public void onPageScrollStateChanged(int state) {
-
-        }
-    };
-
-    public class MyViewPagerAdapter extends PagerAdapter {
-
-        MyViewPagerAdapter() {
-        }
-
-        @Override
-        public Object instantiateItem(ViewGroup container, int position) {
-            container.addView(lvs[position]);
-            return lvs[position];
-        }
-
-        @Override
-        public int getCount() {
-            return lvs.length;
-        }
-
-        @Override
-        public boolean isViewFromObject(View view, Object object) {
-            return view == object;
-        }
-
-        @Override
-        public void destroyItem(ViewGroup container, int position, Object object) {
-            View view = (View) object;
-            container.removeView(view);
-        }
-    }
-
     private static class MyHandler extends Handler {
         WeakReference<QuestionbankInfoActivity> mActivity;
         @SuppressWarnings("unused")
@@ -434,6 +400,34 @@ public class QuestionbankInfoActivity extends BaseActivity {
                 default:
                     break;
             }
+        }
+    }
+
+    public class MyViewPagerAdapter extends PagerAdapter {
+
+        MyViewPagerAdapter() {
+        }
+
+        @Override
+        public Object instantiateItem(ViewGroup container, int position) {
+            container.addView(lvs[position]);
+            return lvs[position];
+        }
+
+        @Override
+        public int getCount() {
+            return lvs.length;
+        }
+
+        @Override
+        public boolean isViewFromObject(View view, Object object) {
+            return view == object;
+        }
+
+        @Override
+        public void destroyItem(ViewGroup container, int position, Object object) {
+            View view = (View) object;
+            container.removeView(view);
         }
     }
 }

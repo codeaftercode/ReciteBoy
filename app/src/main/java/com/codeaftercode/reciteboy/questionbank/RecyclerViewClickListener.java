@@ -15,13 +15,6 @@ public class RecyclerViewClickListener implements RecyclerView.OnItemTouchListen
     private GestureDetector mGestureDetector;
     private OnItemClickListener mListener;
 
-    //内部接口，定义点击方法以及长按方法
-    public interface OnItemClickListener {
-        void onItemClick(View view, int position);
-
-        void onItemLongClick(View view, int position);
-    }
-
     public RecyclerViewClickListener(Context context, final RecyclerView recyclerView, OnItemClickListener listener){
         mListener = listener;
         mGestureDetector = new GestureDetector(context,
@@ -46,6 +39,7 @@ public class RecyclerViewClickListener implements RecyclerView.OnItemTouchListen
                     }
                 });
     }
+
     @Override
     public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
         //把事件交给GestureDetector处理
@@ -58,5 +52,12 @@ public class RecyclerViewClickListener implements RecyclerView.OnItemTouchListen
 
     @Override
     public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+    }
+
+    //内部接口，定义点击方法以及长按方法
+    public interface OnItemClickListener {
+        void onItemClick(View view, int position);
+
+        void onItemLongClick(View view, int position);
     }
 }

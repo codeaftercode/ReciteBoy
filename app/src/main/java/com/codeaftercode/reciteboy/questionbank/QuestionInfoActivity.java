@@ -61,6 +61,23 @@ public class QuestionInfoActivity extends BaseActivity {
     private GestureDetector gestureDetector;
 
     private Handler mHandler = new MyHandler(this);
+    //手势监听
+    private GestureDetector.OnGestureListener onGestureListener =
+            new GestureDetector.SimpleOnGestureListener() {
+                @Override
+                public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
+                                       float velocityY) {
+                    float x = e2.getX() - e1.getX();
+                    //float y = e2.getY() - e1.getY();
+
+                    if (x > 0) {
+                        doResult(RIGHT);
+                    } else if (x < 0) {
+                        doResult(LEFT);
+                    }
+                    return true;
+                }
+            };
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -351,25 +368,6 @@ public class QuestionInfoActivity extends BaseActivity {
                 })
                 .show();
     }
-
-
-    //手势监听
-    private GestureDetector.OnGestureListener onGestureListener =
-            new GestureDetector.SimpleOnGestureListener() {
-                @Override
-                public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
-                                       float velocityY) {
-                    float x = e2.getX() - e1.getX();
-                    //float y = e2.getY() - e1.getY();
-
-                    if (x > 0) {
-                        doResult(RIGHT);
-                    } else if (x < 0) {
-                        doResult(LEFT);
-                    }
-                    return true;
-                }
-            };
 
     public boolean onTouchEvent(MotionEvent event) {
         return gestureDetector.onTouchEvent(event);

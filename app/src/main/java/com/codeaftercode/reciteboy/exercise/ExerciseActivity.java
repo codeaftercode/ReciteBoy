@@ -42,14 +42,13 @@ import java.util.ArrayList;
 public class ExerciseActivity extends BaseActivity implements View.OnClickListener {
     private static final int ERROR_EMPTY = 1;
     private static final int READY = 2;
-    private Context mContext;
-    private Handler mHandler;
-    private ActivityExerciseBinding mBinding;
     QuestionInfoType0Binding mType0Binding;
     QuestionInfoType1Binding mType1Binding;
     QuestionInfoType2Binding mType2Binding;
     QuestionInfoType3Binding mType3Binding;
-
+    private Context mContext;
+    private Handler mHandler;
+    private ActivityExerciseBinding mBinding;
     //当前题库
     private QuestionBank mQuestionbank;
     //题目列表

@@ -7,15 +7,15 @@
 
         <RadioButton
             android:id="@+id/rb_question_info_type3_optionCorrect"
-            android:text="@string/right"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/right"/>
 
         <RadioButton
             android:id="@+id/rb_question_info_type3_optionWrong"
-            android:text="@string/wrong"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/wrong"/>
 
     </RadioGroup>
 </layout>

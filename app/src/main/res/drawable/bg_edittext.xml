@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- 不可编辑时 -->
-    <item android:state_enabled="false" android:drawable="@color/textColorSecondary" />
+    <item android:drawable="@color/textColorSecondary" android:state_enabled="false"/>
     <!-- 可编辑,未获得焦点时 -->
     <item android:state_enabled="true" android:state_focused="false">
         <shape>

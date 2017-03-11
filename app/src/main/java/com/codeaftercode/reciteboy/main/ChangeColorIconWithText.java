@@ -22,14 +22,13 @@ import com.codeaftercode.reciteboy.R;
 
 public class ChangeColorIconWithText extends View {
 
+    private static final String INSTANCE_STATUS = "instance_status";
+    private static final String STATUS_ALPHA = "status_alpha";
     private int mColor = 0xFF45C01A;
     private Bitmap mIconBitmap;
     private String mText = "微信";
-
     private Bitmap mBitmap;
-
     private float mAlpha;
-
     private Rect mIconRect;
     private Rect mTextBound;
     private Paint mTextPaint;
@@ -171,9 +170,6 @@ public class ChangeColorIconWithText extends View {
         mPaint.setAlpha(255);
         mCanvas.drawBitmap(mIconBitmap, null, mIconRect, mPaint);
     }
-
-    private static final String INSTANCE_STATUS = "instance_status";
-    private static final String STATUS_ALPHA = "status_alpha";
 
     @Override
     protected Parcelable onSaveInstanceState() {

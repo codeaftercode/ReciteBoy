@@ -7,10 +7,10 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/bg_screen4"
-        android:orientation="vertical"
         android:layout_centerInParent="true"
-        android:gravity="center_horizontal">
+        android:background="@color/bg_screen4"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
@@ -24,9 +24,9 @@
         <ImageView
             android:layout_width="@dimen/img_width_height"
             android:layout_height="@dimen/img_width_height"
-            android:background="@color/bg_screen4"
             android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:src="@mipmap/img4"
-            android:contentDescription="@string/slide_4_title" />
+            android:background="@color/bg_screen4"
+            android:contentDescription="@string/slide_4_title"
+            android:src="@mipmap/img4"/>
     </LinearLayout>
 </RelativeLayout>

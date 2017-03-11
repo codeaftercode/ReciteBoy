@@ -2,7 +2,6 @@ package com.codeaftercode.reciteboy.bean;
 
 import android.databinding.BaseObservable;
 
-
 import java.io.Serializable;
 
 /**

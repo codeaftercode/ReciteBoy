@@ -16,11 +16,6 @@ public class MyApplication extends Application {
 
     private static ArrayList<QuestionBank> mQuestionBankArrayList;
 
-    @Override
-    public void onCreate() {
-
-    }
-
     public static ArrayList<QuestionBank> getQuestionBankArrayList() {
         if (null == mQuestionBankArrayList) {
             mQuestionBankArrayList =new  ArrayList<>();
@@ -33,5 +28,10 @@ public class MyApplication extends Application {
         Dao dao = new Dao(context);
         //查询数据
         mQuestionBankArrayList = dao.queryQuestionbankList();
+    }
+
+    @Override
+    public void onCreate() {
+
     }
 }

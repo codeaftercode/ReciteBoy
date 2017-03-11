@@ -15,7 +15,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.codeaftercode.reciteboy.found.FoundFragment;
 import com.codeaftercode.reciteboy.R;
 import com.codeaftercode.reciteboy.bean.Question;
 import com.codeaftercode.reciteboy.bean.QuestionBank;
@@ -24,6 +23,7 @@ import com.codeaftercode.reciteboy.common.MyApplication;
 import com.codeaftercode.reciteboy.databinding.ActivityMainBinding;
 import com.codeaftercode.reciteboy.db.Dao;
 import com.codeaftercode.reciteboy.exercise.ExerciseFragment;
+import com.codeaftercode.reciteboy.found.FoundFragment;
 import com.codeaftercode.reciteboy.me.MeFragment;
 import com.codeaftercode.reciteboy.questionbank.QuestionbankFragment;
 import com.codeaftercode.reciteboy.util.FileUtil;
@@ -41,17 +41,14 @@ import java.util.TimeZone;
  */
 
 public class MainActivity extends BaseActivity implements View.OnClickListener, ViewPager.OnPageChangeListener {
+    //题库信息改变
+    public static final int QUESTIONBANK_CHANGE = 4;
     //用户选择目标文件成功
     private static final int SELECT_QUESTIONBANK = 1;
     //导入题库成功
     private static final int IMPORT_QUESTIONBANK_SUCCESS = 2;
     //导入题库失败
     private static final int IMPORT_QUESTIONBANK_FAIL = 3;
-    //题库信息改变
-    public static final int QUESTIONBANK_CHANGE = 4;
-
-
-
     private ActivityMainBinding binding;
     private Context mContext;
 

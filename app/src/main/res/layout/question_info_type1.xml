@@ -12,27 +12,27 @@
         android:layout_height="wrap_content">
 
         <CheckBox
-            android:text="@{question.getOptionAtIndex(0)}"
             android:id="@+id/cb_question_info_type1_optionA"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@{question.getOptionAtIndex(0)}"/>
 
         <CheckBox
-            android:text="@{question.getOptionAtIndex(1)}"
             android:id="@+id/cb_question_info_type1_optionB"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@{question.getOptionAtIndex(1)}"/>
 
         <CheckBox
-            android:text="@{question.getOptionAtIndex(2)}"
             android:id="@+id/cb_question_info_type1_optionC"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@{question.getOptionAtIndex(2)}"/>
 
         <CheckBox
-            android:text="@{question.getOptionAtIndex(3)}"
             android:id="@+id/cb_question_info_type1_optionD"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@{question.getOptionAtIndex(3)}"/>
     </RadioGroup>
 </layout>

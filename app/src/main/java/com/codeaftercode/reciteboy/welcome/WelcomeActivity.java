@@ -30,6 +30,32 @@ import com.codeaftercode.reciteboy.main.MainActivity;
 public class WelcomeActivity extends Activity {
     private int[] layouts;
     private ActivityWelcomeBinding binding;
+    ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
+
+        @Override
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+        }
+
+        @Override
+        public void onPageSelected(int position) {
+            addBottomDots(position);
+
+            //改变下一步按钮text  “NEXT”或“GOT IT”
+            if (position == layouts.length - 1) {
+                binding.welcomeBtnNext.setText(getString(R.string.start));
+                binding.welcomeBtnSkip.setVisibility(View.GONE);
+            } else {
+                binding.welcomeBtnNext.setText(getString(R.string.next));
+                binding.welcomeBtnSkip.setVisibility(View.VISIBLE);
+            }
+        }
+
+        @Override
+        public void onPageScrollStateChanged(int state) {
+
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,33 +149,6 @@ public class WelcomeActivity extends Activity {
             window.setStatusBarColor(Color.TRANSPARENT);
         }
     }
-
-    ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener(){
-
-        @Override
-        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-        }
-
-        @Override
-        public void onPageSelected(int position) {
-            addBottomDots(position);
-
-            //改变下一步按钮text  “NEXT”或“GOT IT”
-            if(position == layouts.length - 1){
-                binding.welcomeBtnNext.setText(getString(R.string.start));
-                binding.welcomeBtnSkip.setVisibility(View.GONE);
-            }else{
-                binding.welcomeBtnNext.setText(getString(R.string.next));
-                binding.welcomeBtnSkip.setVisibility(View.VISIBLE);
-            }
-        }
-
-        @Override
-        public void onPageScrollStateChanged(int state) {
-
-        }
-    };
 
     public class MyViewPagerAdapter extends PagerAdapter {
 
